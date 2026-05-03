@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=64", "setuptools-scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "MCHeston"
+version = "0.1.0"
+description = "Heston stochastic-volatility model: Monte Carlo simulation and option pricing"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "Youssef Raad", email = "youssefraad@hotmail.dk" }
+]
+keywords = [
+    "heston",
+    "stochastic-volatility",
+    "option-pricing",
+    "monte-carlo",
+    "quantitative-finance",
+    "derivatives",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = [
+    "numpy>=1.21",
+    "scipy>=1.7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=4.0",
+    "build>=1.0",
+    "twine>=4.0",
+]
+plots = [
+    "matplotlib>=3.4",
+]
+
+[project.urls]
+Homepage = "https://github.com/YoussefRaad-mathecon/MCHeston"
+Repository = "https://github.com/YoussefRaad-mathecon/MCHeston"
+Issues = "https://github.com/YoussefRaad-mathecon/MCHeston/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
